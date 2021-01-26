@@ -1,0 +1,24 @@
+{
+  "name": "example",
+  "version": "0.0.1",
+  "dependencies": {},
+  "engines": {
+    "node": "0.6.x"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "node server.js"
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azat-co/nodejs-hello-world.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azat-co/nodejs-hello-world/issues"
+  },
+  "homepage": "https://github.com/azat-co/nodejs-hello-world#readme",
+  "description": ""
+}
