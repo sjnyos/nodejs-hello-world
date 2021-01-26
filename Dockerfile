@@ -3,7 +3,7 @@ WORKDIR /app/src/
 COPY package* /app/src/
 RUN npm  i 
 COPY . /app/src/
-RUN  npm run build
+#RUN  npm run build
 
 FROM alpine:3.8
 COPY --from=builder /app/src /app/
