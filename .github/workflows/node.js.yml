@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Building Image and pushing it to Dockerhub
+name: Node.js CI
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
 
 jobs:
    test:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [10.x]
@@ -41,3 +41,18 @@ jobs:
         push: true
         tags: surajmachamasi/nodeapplication:v1
 
+   deploy_nodeapp:
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+    - name: SSH and deploy node app
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.SSH_PORT }}
+        script: |
+          cd ~/dashboard
+          git pull origin main
+          docker-compose up -d
