@@ -2,8 +2,10 @@
 version: '3'
 services:
   hello-world-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-    - 8081:3000  
+  ``  build:
+      ``context: .
+      ``dockerfile: Dockerfile
+      container-name: helloworldnodejs
+      restart: always
+   `` ports:
+      `- 8081:3000  
