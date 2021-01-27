@@ -7,7 +7,7 @@ var app=http.createServer(function (req, res) {
   res.end('Hello World\n');
   //outputs string with line end symbol
 });
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
