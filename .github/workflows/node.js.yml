@@ -11,7 +11,7 @@ on:
 
 jobs:
    test:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [10.x]
@@ -42,7 +42,7 @@ jobs:
 
    deploy_nodeapp:
     needs: [test]
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
     - name: SSH and deploy node app
       uses: appleboy/ssh-action@master
