@@ -52,6 +52,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: |
-          cd ~/dashboard
+          mkdir nodeapp
+          cd ~/nodeapp
           git pull origin worker1
           docker-compose up -d
