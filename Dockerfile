@@ -7,7 +7,7 @@ COPY . /app/src/
 
 FROM alpine:3.8
 RUN apk add --no-cache nodejs-current
-COPY --from=builder /app/src /app/
 WORKDIR /app/
+COPY --from=builder /app/src /app/
 EXPOSE 3000
 CMD ["npm","start"]
