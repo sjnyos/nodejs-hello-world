@@ -8,4 +8,4 @@ RUN  npm run build
 FROM alpine:3.8
 COPY --from=builder /app/src /app/
 EXPOSE 3000
-#CMD ["npm","start"]
+CMD ["npm","start"]
