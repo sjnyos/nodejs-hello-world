@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ worker1 ]
+    branches: [ master ]
   pull_request:
-    branches: [ worker1 ]
+    branches: [ master ]
 
 jobs:
    test:
@@ -56,3 +56,4 @@ jobs:
           cd ~/nodeapp
           git pull origin worker1
           docker-compose up -d
+        
