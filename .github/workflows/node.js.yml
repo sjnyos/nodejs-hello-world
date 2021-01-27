@@ -60,7 +60,8 @@ jobs:
           git clone https://github.com/sjnyos/nodejs-hello-world.git
           cd ~/nodejs-hello-world
           docker-compose down
-          docker-compose up -d
+          docker-compose --build
+          docker-compose up -d 
 
 
           
