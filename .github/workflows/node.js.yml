@@ -38,7 +38,7 @@ jobs:
         context: ./
         file: ./Dockerfile
         push: true
-        tags: surajmachamasi/nodeapplication:v1
+        tags: surajmachamasi/nodeapplication:v2
 
    deploy_nodeapp:
     needs: [test]
