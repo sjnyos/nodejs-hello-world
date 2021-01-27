@@ -16,7 +16,11 @@ jobs:
       matrix:
         node-version: [10.x]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2-
+    -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -40,7 +44,7 @@ jobs:
         push: true
         tags: surajmachamasi/nodeapplication:v2
 
-   deploy_nodeapp:
+   Deploy_Nodeapp:
     needs: [test]
     runs-on: ubuntu-latest
     steps:
@@ -54,7 +58,7 @@ jobs:
         script: |
           mkdir nodeapp
           cd ~/nodeapp
-          git pull origin worker1
+          git pull origin master
           docker-compose up -d
 
 
