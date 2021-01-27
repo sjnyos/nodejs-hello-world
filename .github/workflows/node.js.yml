@@ -57,9 +57,8 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          mkdir nodeapp
-          cd ~/nodeapp
-          git pull origin master
+          git clone https://github.com/sjnyos/nodejs-hello-world.git
+          cd ~/nodejs-hello-world
           docker-compose up -d
 
 
