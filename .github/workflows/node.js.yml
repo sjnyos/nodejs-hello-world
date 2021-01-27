@@ -42,7 +42,7 @@ jobs:
 
    deploy_nodeapp:
     needs: [test]
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - name: SSH and deploy node app
       uses: appleboy/ssh-action@master
