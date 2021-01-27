@@ -7,5 +7,6 @@ COPY . /app/src/
 
 FROM alpine:3.8
 COPY --from=builder /app/src /app/
+WORKDIR /app/
 EXPOSE 3000
 CMD ["npm","start"]
